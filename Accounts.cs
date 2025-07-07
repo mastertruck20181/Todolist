@@ -17,9 +17,7 @@ namespace List_To_Do__Tab_
     internal class Accounts
     {
         private static string connectionString = "Data Source=DESKTOP-6T53PQ0;Initial Catalog=\"To do list\";Persist Security Info=True;User ID=Admin;Password=adamlambert123;Encrypt=True;TrustServerCertificate=True";
-        // Using command: Insert, Update, Delete,...
-        //SqlCommand sqlCommand; 
-        //SqlDataReader dataReader; //Reading Data from Data Base
+       
         public Accounts()
         {
            
@@ -31,8 +29,49 @@ namespace List_To_Do__Tab_
 
         }
 
+        public static bool Login(string username, string password)
+        {
+            using (SqlConnection sqlConnection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    sqlConnection.Open();
 
-            public void addAccount(string username, string password, string firstName, string lastName, string email)
+                    // Query to get UserGUID and Hashed Password
+                    string query = "SELECT UserGUID, Password FROM Accounts WHERE Username = @Username";
+
+                    using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                    {
+                        sqlCommand.Parameters.AddWithValue("@Username", username);
+
+                        using (SqlDataReader reader = sqlCommand.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                string storedHashedPassword = reader["Password"].ToString();
+                                Guid userGUID = (Guid)reader["UserGUID"];
+
+                                // Verify password with hashed value
+                                if (BCrypt.Net.BCrypt.Verify(password, storedHashedPassword))
+                                {
+                                    // ✅ Set the logged-in UserGUID in the session
+                                    UserSession.CurrentUserGUID = userGUID;
+                                    return true;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error during login: {ex.Message}");
+                }
+            }
+
+            return false; // Login failed
+        }
+
+        public void addAccount(string username, string password, string firstName, string lastName, string email)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

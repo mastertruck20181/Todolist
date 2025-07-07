@@ -59,7 +59,7 @@
             this.CloseBox = new System.Windows.Forms.PictureBox();
             this.pictureBox14 = new System.Windows.Forms.PictureBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.addTaskButton = new System.Windows.Forms.Button();
+            this.taskButton = new System.Windows.Forms.Button();
             this.todoListView = new System.Windows.Forms.ListView();
             this.upcomingListView = new System.Windows.Forms.ListView();
             this.completedListView = new System.Windows.Forms.ListView();
@@ -67,9 +67,14 @@
             this.menuPan = new System.Windows.Forms.Panel();
             this.menuButton = new System.Windows.Forms.Button();
             this.submenuPan = new System.Windows.Forms.Panel();
+            this.filterButton = new System.Windows.Forms.Button();
             this.submenu3 = new System.Windows.Forms.Button();
             this.submenu2 = new System.Windows.Forms.Button();
-            this.submenu1 = new System.Windows.Forms.Button();
+            this.homeButton = new System.Windows.Forms.Button();
+            this.panelContainer = new System.Windows.Forms.Panel();
+            this.reloadButton = new System.Windows.Forms.Button();
+            this.reminderButton = new System.Windows.Forms.Button();
+            this.reminderBlink = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panel2.SuspendLayout();
@@ -91,6 +96,7 @@
             this.sidebarMenu.SuspendLayout();
             this.menuPan.SuspendLayout();
             this.submenuPan.SuspendLayout();
+            this.panelContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -283,62 +289,68 @@
             // 
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Gold;
-            this.label8.Location = new System.Drawing.Point(15, 14);
+            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Yellow;
+            this.label8.Location = new System.Drawing.Point(3, 6);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 25);
+            this.label8.Size = new System.Drawing.Size(106, 23);
             this.label8.TabIndex = 8;
-            this.label8.Text = "Upcoming";
+            this.label8.Text = "In Progress";
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.Sienna;
+            this.panel7.BackColor = System.Drawing.Color.SaddleBrown;
+            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel7.Controls.Add(this.label8);
-            this.panel7.Location = new System.Drawing.Point(88, 416);
+            this.panel7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel7.Location = new System.Drawing.Point(35, 312);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(149, 54);
+            this.panel7.Size = new System.Drawing.Size(905, 36);
             this.panel7.TabIndex = 11;
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.Sienna;
+            this.panel8.BackColor = System.Drawing.Color.SaddleBrown;
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel8.Controls.Add(this.label9);
-            this.panel8.Location = new System.Drawing.Point(88, 130);
+            this.panel8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel8.Location = new System.Drawing.Point(35, 101);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(149, 54);
+            this.panel8.Size = new System.Drawing.Size(905, 36);
             this.panel8.TabIndex = 12;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Gold;
-            this.label9.Location = new System.Drawing.Point(39, 13);
+            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Yellow;
+            this.label9.Location = new System.Drawing.Point(3, 6);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(68, 25);
+            this.label9.Size = new System.Drawing.Size(56, 23);
             this.label9.TabIndex = 8;
             this.label9.Text = "To do";
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.Sienna;
+            this.panel9.BackColor = System.Drawing.Color.SaddleBrown;
+            this.panel9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel9.Controls.Add(this.label10);
-            this.panel9.Location = new System.Drawing.Point(88, 701);
+            this.panel9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel9.Location = new System.Drawing.Point(35, 523);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(149, 54);
+            this.panel9.Size = new System.Drawing.Size(905, 36);
             this.panel9.TabIndex = 12;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Gold;
-            this.label10.Location = new System.Drawing.Point(16, 15);
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Yellow;
+            this.label10.Location = new System.Drawing.Point(3, 7);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(121, 25);
+            this.label10.Size = new System.Drawing.Size(101, 23);
             this.label10.TabIndex = 8;
             this.label10.Text = "Completed";
             // 
@@ -346,16 +358,17 @@
             // 
             this.sidebarTimer.Enabled = true;
             this.sidebarTimer.Interval = 10;
+            this.sidebarTimer.Tick += new System.EventHandler(this.sidebarTimer_Tick);
             // 
             // headerPanel
             // 
-            this.headerPanel.BackColor = System.Drawing.Color.SaddleBrown;
+            this.headerPanel.BackColor = System.Drawing.Color.Transparent;
             this.headerPanel.Controls.Add(this.CloseBox);
             this.headerPanel.Cursor = System.Windows.Forms.Cursors.SizeAll;
             this.headerPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.headerPanel.Location = new System.Drawing.Point(0, 0);
             this.headerPanel.Name = "headerPanel";
-            this.headerPanel.Size = new System.Drawing.Size(1040, 45);
+            this.headerPanel.Size = new System.Drawing.Size(1040, 48);
             this.headerPanel.TabIndex = 3;
             this.headerPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.headerPanel_MouseDown);
             this.headerPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.headerPanel_MouseMove);
@@ -365,7 +378,7 @@
             // 
             this.CloseBox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CloseBox.Image = ((System.Drawing.Image)(resources.GetObject("CloseBox.Image")));
-            this.CloseBox.Location = new System.Drawing.Point(995, 0);
+            this.CloseBox.Location = new System.Drawing.Point(993, 1);
             this.CloseBox.Name = "CloseBox";
             this.CloseBox.Size = new System.Drawing.Size(45, 45);
             this.CloseBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -376,9 +389,9 @@
             // pictureBox14
             // 
             this.pictureBox14.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox14.Image")));
-            this.pictureBox14.Location = new System.Drawing.Point(678, 51);
+            this.pictureBox14.Location = new System.Drawing.Point(303, 22);
             this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(73, 68);
+            this.pictureBox14.Size = new System.Drawing.Size(58, 61);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox14.TabIndex = 0;
             this.pictureBox14.TabStop = false;
@@ -386,87 +399,93 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Gold;
-            this.label16.Location = new System.Drawing.Point(428, 66);
+            this.label16.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Yellow;
+            this.label16.Location = new System.Drawing.Point(379, 38);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(244, 53);
+            this.label16.Size = new System.Drawing.Size(207, 45);
             this.label16.TabIndex = 1;
             this.label16.Text = "Bee Happy";
             // 
-            // addTaskButton
+            // taskButton
             // 
-            this.addTaskButton.BackColor = System.Drawing.Color.Gold;
-            this.addTaskButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.addTaskButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.addTaskButton.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addTaskButton.Image = ((System.Drawing.Image)(resources.GetObject("addTaskButton.Image")));
-            this.addTaskButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.addTaskButton.Location = new System.Drawing.Point(850, 130);
-            this.addTaskButton.Name = "addTaskButton";
-            this.addTaskButton.Size = new System.Drawing.Size(176, 55);
-            this.addTaskButton.TabIndex = 17;
-            this.addTaskButton.Text = "Add a Task";
-            this.addTaskButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.addTaskButton.UseVisualStyleBackColor = false;
-            this.addTaskButton.Click += new System.EventHandler(this.addTaskButton_Click);
+            this.taskButton.BackColor = System.Drawing.Color.Gold;
+            this.taskButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.taskButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.taskButton.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taskButton.Image = ((System.Drawing.Image)(resources.GetObject("taskButton.Image")));
+            this.taskButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.taskButton.Location = new System.Drawing.Point(742, 48);
+            this.taskButton.Name = "taskButton";
+            this.taskButton.Size = new System.Drawing.Size(133, 44);
+            this.taskButton.TabIndex = 17;
+            this.taskButton.Text = "Task manager";
+            this.taskButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.taskButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.taskButton.UseVisualStyleBackColor = false;
+            this.taskButton.Click += new System.EventHandler(this.taskButton_Click);
             // 
             // todoListView
             // 
             this.todoListView.FullRowSelect = true;
             this.todoListView.GridLines = true;
             this.todoListView.HideSelection = false;
-            this.todoListView.Location = new System.Drawing.Point(88, 191);
+            this.todoListView.Location = new System.Drawing.Point(35, 138);
             this.todoListView.Name = "todoListView";
-            this.todoListView.Size = new System.Drawing.Size(938, 211);
+            this.todoListView.Size = new System.Drawing.Size(905, 150);
             this.todoListView.TabIndex = 18;
             this.todoListView.UseCompatibleStateImageBehavior = false;
             this.todoListView.View = System.Windows.Forms.View.Details;
+            this.todoListView.Click += new System.EventHandler(this.todoListView_Click);
             // 
             // upcomingListView
             // 
             this.upcomingListView.FullRowSelect = true;
             this.upcomingListView.GridLines = true;
             this.upcomingListView.HideSelection = false;
-            this.upcomingListView.Location = new System.Drawing.Point(88, 478);
+            this.upcomingListView.Location = new System.Drawing.Point(35, 349);
             this.upcomingListView.Name = "upcomingListView";
-            this.upcomingListView.Size = new System.Drawing.Size(938, 211);
+            this.upcomingListView.Size = new System.Drawing.Size(905, 150);
             this.upcomingListView.TabIndex = 19;
             this.upcomingListView.UseCompatibleStateImageBehavior = false;
             this.upcomingListView.View = System.Windows.Forms.View.Details;
+            this.upcomingListView.Click += new System.EventHandler(this.upcomingListView_Click);
             // 
             // completedListView
             // 
             this.completedListView.FullRowSelect = true;
             this.completedListView.GridLines = true;
             this.completedListView.HideSelection = false;
-            this.completedListView.Location = new System.Drawing.Point(88, 763);
+            this.completedListView.Location = new System.Drawing.Point(35, 560);
             this.completedListView.Name = "completedListView";
-            this.completedListView.Size = new System.Drawing.Size(938, 211);
+            this.completedListView.Size = new System.Drawing.Size(905, 150);
             this.completedListView.TabIndex = 20;
             this.completedListView.UseCompatibleStateImageBehavior = false;
             this.completedListView.View = System.Windows.Forms.View.Details;
+            this.completedListView.Click += new System.EventHandler(this.completedListView_Click);
             // 
             // sidebarMenu
             // 
-            this.sidebarMenu.BackColor = System.Drawing.Color.SaddleBrown;
-            this.sidebarMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.sidebarMenu.BackColor = System.Drawing.Color.Transparent;
+            this.sidebarMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.sidebarMenu.Controls.Add(this.menuPan);
             this.sidebarMenu.Controls.Add(this.submenuPan);
             this.sidebarMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.sidebarMenu.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sidebarMenu.ForeColor = System.Drawing.Color.Black;
-            this.sidebarMenu.Location = new System.Drawing.Point(0, 45);
+            this.sidebarMenu.Location = new System.Drawing.Point(0, 48);
             this.sidebarMenu.MaximumSize = new System.Drawing.Size(320, 1005);
-            this.sidebarMenu.MinimumSize = new System.Drawing.Size(60, 1005);
+            this.sidebarMenu.MinimumSize = new System.Drawing.Size(50, 1005);
             this.sidebarMenu.Name = "sidebarMenu";
-            this.sidebarMenu.Size = new System.Drawing.Size(60, 1005);
+            this.sidebarMenu.Size = new System.Drawing.Size(50, 1005);
             this.sidebarMenu.TabIndex = 21;
             // 
             // menuPan
             // 
-            this.menuPan.BackColor = System.Drawing.Color.SaddleBrown;
+            this.menuPan.BackColor = System.Drawing.Color.Gold;
+            this.menuPan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menuPan.Controls.Add(this.menuButton);
+            this.menuPan.Dock = System.Windows.Forms.DockStyle.Top;
             this.menuPan.Location = new System.Drawing.Point(3, 3);
             this.menuPan.Name = "menuPan";
             this.menuPan.Size = new System.Drawing.Size(314, 56);
@@ -474,18 +493,19 @@
             // 
             // menuButton
             // 
-            this.menuButton.BackColor = System.Drawing.Color.SaddleBrown;
+            this.menuButton.BackColor = System.Drawing.Color.Gold;
             this.menuButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.menuButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.menuButton.FlatAppearance.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.menuButton.FlatAppearance.BorderSize = 0;
             this.menuButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.menuButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.menuButton.ForeColor = System.Drawing.Color.Gold;
+            this.menuButton.ForeColor = System.Drawing.Color.Black;
             this.menuButton.Image = ((System.Drawing.Image)(resources.GetObject("menuButton.Image")));
             this.menuButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.menuButton.Location = new System.Drawing.Point(7, 8);
+            this.menuButton.Location = new System.Drawing.Point(2, 8);
             this.menuButton.Name = "menuButton";
-            this.menuButton.Size = new System.Drawing.Size(302, 40);
+            this.menuButton.Size = new System.Drawing.Size(314, 40);
             this.menuButton.TabIndex = 1;
             this.menuButton.Text = "Menu";
             this.menuButton.UseVisualStyleBackColor = false;
@@ -493,88 +513,161 @@
             // 
             // submenuPan
             // 
-            this.submenuPan.BackColor = System.Drawing.Color.SaddleBrown;
+            this.submenuPan.BackColor = System.Drawing.Color.Gold;
+            this.submenuPan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.submenuPan.Controls.Add(this.filterButton);
             this.submenuPan.Controls.Add(this.submenu3);
             this.submenuPan.Controls.Add(this.submenu2);
-            this.submenuPan.Controls.Add(this.submenu1);
+            this.submenuPan.Controls.Add(this.homeButton);
             this.submenuPan.ForeColor = System.Drawing.Color.Black;
             this.submenuPan.Location = new System.Drawing.Point(3, 65);
             this.submenuPan.Name = "submenuPan";
             this.submenuPan.Size = new System.Drawing.Size(314, 935);
             this.submenuPan.TabIndex = 1;
             // 
+            // filterButton
+            // 
+            this.filterButton.BackColor = System.Drawing.Color.Gold;
+            this.filterButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.filterButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.filterButton.FlatAppearance.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.filterButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.filterButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filterButton.ForeColor = System.Drawing.Color.Black;
+            this.filterButton.Image = ((System.Drawing.Image)(resources.GetObject("filterButton.Image")));
+            this.filterButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.filterButton.Location = new System.Drawing.Point(1, 40);
+            this.filterButton.Name = "filterButton";
+            this.filterButton.Size = new System.Drawing.Size(313, 40);
+            this.filterButton.TabIndex = 3;
+            this.filterButton.Text = "Filter Task";
+            this.filterButton.UseVisualStyleBackColor = false;
+            this.filterButton.Click += new System.EventHandler(this.filterButton_Click);
+            // 
             // submenu3
             // 
-            this.submenu3.BackColor = System.Drawing.Color.SaddleBrown;
+            this.submenu3.BackColor = System.Drawing.Color.Gold;
             this.submenu3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.submenu3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.submenu3.FlatAppearance.BorderColor = System.Drawing.Color.SaddleBrown;
             this.submenu3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submenu3.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submenu3.ForeColor = System.Drawing.Color.Gold;
+            this.submenu3.ForeColor = System.Drawing.Color.Black;
             this.submenu3.Image = ((System.Drawing.Image)(resources.GetObject("submenu3.Image")));
             this.submenu3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.submenu3.Location = new System.Drawing.Point(7, 97);
+            this.submenu3.Location = new System.Drawing.Point(1, 79);
             this.submenu3.Name = "submenu3";
-            this.submenu3.Size = new System.Drawing.Size(302, 40);
+            this.submenu3.Size = new System.Drawing.Size(313, 40);
             this.submenu3.TabIndex = 2;
             this.submenu3.Text = "Sub menu 3";
             this.submenu3.UseVisualStyleBackColor = false;
             // 
             // submenu2
             // 
-            this.submenu2.BackColor = System.Drawing.Color.SaddleBrown;
+            this.submenu2.BackColor = System.Drawing.Color.Gold;
             this.submenu2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.submenu2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.submenu2.FlatAppearance.BorderColor = System.Drawing.Color.SaddleBrown;
             this.submenu2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submenu2.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submenu2.ForeColor = System.Drawing.Color.Gold;
+            this.submenu2.ForeColor = System.Drawing.Color.Black;
             this.submenu2.Image = ((System.Drawing.Image)(resources.GetObject("submenu2.Image")));
             this.submenu2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.submenu2.Location = new System.Drawing.Point(7, 51);
+            this.submenu2.Location = new System.Drawing.Point(1, 118);
             this.submenu2.Name = "submenu2";
-            this.submenu2.Size = new System.Drawing.Size(302, 40);
+            this.submenu2.Size = new System.Drawing.Size(313, 40);
             this.submenu2.TabIndex = 1;
             this.submenu2.Text = "Sub menu 2";
             this.submenu2.UseVisualStyleBackColor = false;
             // 
-            // submenu1
+            // homeButton
             // 
-            this.submenu1.BackColor = System.Drawing.Color.SaddleBrown;
-            this.submenu1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.submenu1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.submenu1.FlatAppearance.BorderColor = System.Drawing.Color.SaddleBrown;
-            this.submenu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.submenu1.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.submenu1.ForeColor = System.Drawing.Color.Gold;
-            this.submenu1.Image = ((System.Drawing.Image)(resources.GetObject("submenu1.Image")));
-            this.submenu1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.submenu1.Location = new System.Drawing.Point(7, 5);
-            this.submenu1.Name = "submenu1";
-            this.submenu1.Size = new System.Drawing.Size(302, 40);
-            this.submenu1.TabIndex = 0;
-            this.submenu1.Text = "Sub menu";
-            this.submenu1.UseVisualStyleBackColor = false;
+            this.homeButton.BackColor = System.Drawing.Color.Gold;
+            this.homeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.homeButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.homeButton.FlatAppearance.BorderColor = System.Drawing.Color.SaddleBrown;
+            this.homeButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.homeButton.Font = new System.Drawing.Font("Times New Roman", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.homeButton.ForeColor = System.Drawing.Color.Black;
+            this.homeButton.Image = ((System.Drawing.Image)(resources.GetObject("homeButton.Image")));
+            this.homeButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.homeButton.Location = new System.Drawing.Point(1, 1);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(313, 40);
+            this.homeButton.TabIndex = 0;
+            this.homeButton.Text = "Home";
+            this.homeButton.UseVisualStyleBackColor = false;
+            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
+            // 
+            // panelContainer
+            // 
+            this.panelContainer.Controls.Add(this.reloadButton);
+            this.panelContainer.Controls.Add(this.reminderButton);
+            this.panelContainer.Controls.Add(this.panel8);
+            this.panelContainer.Controls.Add(this.label16);
+            this.panelContainer.Controls.Add(this.pictureBox14);
+            this.panelContainer.Controls.Add(this.panel7);
+            this.panelContainer.Controls.Add(this.panel9);
+            this.panelContainer.Controls.Add(this.todoListView);
+            this.panelContainer.Controls.Add(this.taskButton);
+            this.panelContainer.Controls.Add(this.completedListView);
+            this.panelContainer.Controls.Add(this.upcomingListView);
+            this.panelContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContainer.Location = new System.Drawing.Point(50, 48);
+            this.panelContainer.Name = "panelContainer";
+            this.panelContainer.Size = new System.Drawing.Size(990, 752);
+            this.panelContainer.TabIndex = 22;
+            // 
+            // reloadButton
+            // 
+            this.reloadButton.BackColor = System.Drawing.Color.Gold;
+            this.reloadButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.reloadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reloadButton.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reloadButton.Image = ((System.Drawing.Image)(resources.GetObject("reloadButton.Image")));
+            this.reloadButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.reloadButton.Location = new System.Drawing.Point(821, 714);
+            this.reloadButton.Name = "reloadButton";
+            this.reloadButton.Size = new System.Drawing.Size(119, 35);
+            this.reloadButton.TabIndex = 23;
+            this.reloadButton.Text = "Reload task";
+            this.reloadButton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.reloadButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.reloadButton.UseVisualStyleBackColor = false;
+            this.reloadButton.Visible = false;
+            // 
+            // reminderButton
+            // 
+            this.reminderButton.BackColor = System.Drawing.Color.Transparent;
+            this.reminderButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.reminderButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reminderButton.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.reminderButton.FlatAppearance.BorderSize = 0;
+            this.reminderButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reminderButton.Font = new System.Drawing.Font("Times New Roman", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.reminderButton.Image = ((System.Drawing.Image)(resources.GetObject("reminderButton.Image")));
+            this.reminderButton.Location = new System.Drawing.Point(881, 48);
+            this.reminderButton.Name = "reminderButton";
+            this.reminderButton.Size = new System.Drawing.Size(59, 50);
+            this.reminderButton.TabIndex = 22;
+            this.reminderButton.UseVisualStyleBackColor = false;
+            this.reminderButton.Click += new System.EventHandler(this.reminderButton_Click);
+            // 
+            // reminderBlink
+            // 
+            this.reminderBlink.Interval = 200;
+            this.reminderBlink.Tick += new System.EventHandler(this.reminderBlink_Tick);
             // 
             // MainMenuForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.SaddleBrown;
-            this.ClientSize = new System.Drawing.Size(1040, 1050);
-            this.Controls.Add(this.pictureBox14);
+            this.ClientSize = new System.Drawing.Size(1040, 800);
+            this.Controls.Add(this.panelContainer);
             this.Controls.Add(this.sidebarMenu);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.completedListView);
-            this.Controls.Add(this.upcomingListView);
-            this.Controls.Add(this.todoListView);
-            this.Controls.Add(this.addTaskButton);
             this.Controls.Add(this.headerPanel);
-            this.Controls.Add(this.panel9);
-            this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel7);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainMenuForm";
             this.Text = "MainMenuForm";
             this.Load += new System.EventHandler(this.MainMenuForm_Load);
@@ -608,8 +701,9 @@
             this.sidebarMenu.ResumeLayout(false);
             this.menuPan.ResumeLayout(false);
             this.submenuPan.ResumeLayout(false);
+            this.panelContainer.ResumeLayout(false);
+            this.panelContainer.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -643,7 +737,7 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.Panel headerPanel;
-        private System.Windows.Forms.Button addTaskButton;
+        private System.Windows.Forms.Button taskButton;
         private System.Windows.Forms.ListView todoListView;
         private System.Windows.Forms.ListView upcomingListView;
         private System.Windows.Forms.ListView completedListView;
@@ -652,8 +746,13 @@
         private System.Windows.Forms.Panel menuPan;
         private System.Windows.Forms.Panel submenuPan;
         private System.Windows.Forms.Button menuButton;
-        private System.Windows.Forms.Button submenu1;
+        private System.Windows.Forms.Button homeButton;
         private System.Windows.Forms.Button submenu2;
         private System.Windows.Forms.Button submenu3;
+        private System.Windows.Forms.Button filterButton;
+        private System.Windows.Forms.Panel panelContainer;
+        private System.Windows.Forms.Button reminderButton;
+        private System.Windows.Forms.Button reloadButton;
+        private System.Windows.Forms.Timer reminderBlink;
     }
 }

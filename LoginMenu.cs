@@ -79,10 +79,25 @@ namespace List_To_Do__Tab_
                     string token = JwtHelper.GenerateJwtToken(username, userGUID);
                     MessageBox.Show($"Welcome to Bee Happy - An app that help you track your daily task !", "Message Box", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     //MessageBox.Show(token);
-                       MainMenuForm mainMenu = new MainMenuForm();
-                        mainMenu.ShowDialog();
-                        this.Hide();
-                    }
+                    
+                    MainMenuForm mainMenu = new MainMenuForm();
+
+                    mainMenu.StartPosition = FormStartPosition.Manual; // Allow manual positioning
+                    mainMenu.Show(); // Show the form first to ensure width & height are initialized
+
+                    //int centerX = (Screen.PrimaryScreen.Bounds.Width - mainMenu.Width) / 2;
+                    //int centerY = (Screen.PrimaryScreen.Bounds.Height - mainMenu.Height) / 2;
+                    mainMenu.Location = (new Point(0, 0));
+
+                    //mainMenu.Location = new Point(centerX, centerY);
+
+
+                    //mainMenu.Location = new Point(0, 0); // Set to top-left corner
+                    
+                    this.Hide();
+
+                    
+                }
             }
         }
        
@@ -165,7 +180,7 @@ namespace List_To_Do__Tab_
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
     }
 }
